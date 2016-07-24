@@ -1,0 +1,17 @@
+<% @message=Message.find(params[:id])%>
+<h3><%= @message.title%></h3><br>
+
+
+<div id="comments" data-channel="comments" data-message-id="<%= @message.id %>">
+	<% @comments.each do |cmt|%>
+<div><%= cmt.content%></div><br>
+
+<%end%>
+</div>
+
+
+<%= form_for :comment, url:message_comments_path(@message) do |f|%>
+
+<%= f.text_area :content%>
+<%=f.submit%>
+<% end%>

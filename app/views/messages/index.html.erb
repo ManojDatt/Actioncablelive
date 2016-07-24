@@ -1,0 +1,5 @@
+<ul>
+<% @messages.each do |msg|%>
+<li><%=link_to msg.title , message_path(msg)%> </li>
+<% end%>
+</ul>

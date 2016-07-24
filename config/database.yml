@@ -108,5 +108,5 @@ test:
   database: db_test
 
 production:
-  <<: *default
+  <<: *defaults
   database: db_production
